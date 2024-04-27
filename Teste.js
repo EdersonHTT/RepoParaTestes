@@ -27,7 +27,7 @@ function lista (){
 
     array.push(tarefa, tarefa2, tarefa3, tarefa4)
 
-console.log(`Suas tarefas: ${array}`)
+ console.log(`Suas tarefas: ${array}`)
 
     let completas = prompt("Quantas completas de 1 a 4")
 
@@ -37,9 +37,8 @@ console.log(`Suas tarefas: ${array}`)
 
     console.log(`Suas tarefas: ${array}`)
 }
-lista()
-
 /*
+
 let array1 = []
 
 let guardarNu = prompt("Numero")
@@ -74,12 +73,12 @@ let idade = prompt("Sua idade")
 
 let estudante = prompt("Esta estudando [S/N]")
 if (estudante.toUpperCase() == "SIM"){
-    estudante = "sou"
+    estudante = "sou um estudante"
 } else {
-    estudante = "não sou"
+    estudante = "não sou um estudante"
 }
 
-frase = frase.replaceAll("sou", estudante)
+frase = frase.replaceAll("sou um estudante", estudante)
 frase = frase.replaceAll("Ederson", nome)
 frase = frase.replaceAll("16", idade)
 
@@ -101,8 +100,24 @@ let mult2 = numero3 * numero4
 console.log(`${numero3} X ${numero4} = ${mult2}`)
 
 
-if (mult <= mult2){
+if (mult < mult2){
     console.log(`O primeiro Resultado é menor que o segundo: ${mult} < ${mult2}`)
+} else if (mult = mult2){
+    console.log(`O primeiro resultado é igual ao segundo: ${mult} = ${mult2}`)
 } else {
     console.log(`O primeiro resultado é maior que o segundo: ${mult} > ${mult2}`)
-}*/
+}
+*/
+
+function algo (algo){ 
+    let array2 = []
+    array2.push(algo[0 + numero])
+    array2.push(algo[algo.length - numero2])
+    return array2
+}
+let numero = Number(prompt("Um numero"))
+let numero2 = Number(prompt("Um numero"))
+let array1 = [1,2,3,4,5,6,7,8,9,]
+let novo = algo(array1)
+console.log(novo)
+
