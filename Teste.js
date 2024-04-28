@@ -16,7 +16,7 @@ function atividade2 (arrays){
     console.log(`Suas comidadas preferidas:\n ${array[0]}\n ${array[1]}\n ${array[2]}\n ${array[3]}`)
 }
 
-function lista (){
+function lista2 (){
     let array = []
 
     let tarefa = prompt("Uma terefa") 
@@ -108,7 +108,7 @@ if (mult < mult2){
     console.log(`O primeiro resultado é maior que o segundo: ${mult} > ${mult2}`)
 }
 */
-
+/*
 function algo (algo){ 
     let array2 = []
     array2.push(algo[0 + numero])
@@ -120,4 +120,38 @@ let numero2 = Number(prompt("Um numero"))
 let array1 = [1,2,3,4,5,6,7,8,9,]
 let novo = algo(array1)
 console.log(novo)
+*/
+
+
+function listas (listas){
+    let listaEscolida = []
+    listaEscolida.push(listas[0 + numeroLista])-1
+    return listaEscolida
+}
+
+alert(`Listas: cores[0], comidas[1], frutas[2], jogos[3]`)
+
+let numeroLista = Number(prompt("Qual lista?\n"))
+
+let cores = ["azul", "vermelho", "verde", "rosa", "preto"]
+let comidas = ["lazanha", "macarrão", "pizza", "xis"]
+let frutas = ["pera", "limão", "laranja", "uva", "morango"]
+let jogos = ["Stardew Valley", "umineko", "doom", "spore"]
+
+let listas1 = [cores, comidas, frutas, jogos]
+let paraLista = listas(listas1)
+
+let listagem
+
+if (numeroLista == 0) {
+    listagem = "Lista Cores"
+} else if (numeroLista == 1) {
+    listagem = "Lista Comidas"
+} else if (numeroLista == 2) {
+    listagem = "Lista Frutas"
+} else if (numeroLista == 3) {
+    listagem = "Lista Jogos"
+}
+
+console.log(`${listagem}: ${paraLista}`)
 
