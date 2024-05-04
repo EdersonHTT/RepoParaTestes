@@ -1,157 +1,172 @@
-function atividade (){
+let carteira = {
+    identidade: {
+        nome: prompt("Seu nome completo:"),
+        idade: Number(prompt("Sua Idade?"))
+    },
 
-let nome = prompt("Seu nome")
-let email = prompt("Seu e-mail")
-console.log(`O e-mail ${email} foi cadastrado com sucesso. Seja bem-vinda(o), ${nome}!`)
-
+    dinhero: Number(prompt("Quanto você tem na carteira?")),
 }
 
-function atividade2 (arrays){
-    let array = []
-    let comidas = prompt("comida") 
-    let comidas2 = prompt("comida")
-    let comidas3 = prompt("comida")
-    let comidas4 = prompt("comida")
-    array.push(comidas, comidas2, comidas3, comidas4)
-    console.log(`Suas comidadas preferidas:\n ${array[0]}\n ${array[1]}\n ${array[2]}\n ${array[3]}`)
+console.log(`Carteira: \nIdentidade: ${carteira.identidade.nome}
+Idade: ${carteira.identidade.idade} \nDinheiro: ${carteira.dinhero}`)
+
+function sacolasPraCompra (){
+      
+   let sacola1 = {
+    fruta: "maça",
+    disponibilidade: true,
+    preco: 12.00
+    }
+
+       let sacola2 = {
+    fruta: "uva",
+    disponibilidade: true,
+    preco: 6.00
+    }
+
+       let sacola3 = {
+    fruta: "laranja",
+    disponibilidade: true,
+    preco: 9.00
+    }
+
+       let sacola4 = {
+    fruta: "pera",
+    disponibilidade: true,
+    preco: 5.00
+    }
+
+       let sacola5 = {
+    fruta: "limão",
+    disponibilidade: true,
+    preco: 7.50
+    }
+
+    let paraSacolas = [sacola1, sacola2, sacola3, sacola4, sacola5]
+    return paraSacolas
+}
+let sacolas = sacolasPraCompra()
+
+sacolas[0].disponibilidade = true
+sacolas[1].disponibilidade = true
+sacolas[2].disponibilidade = false
+sacolas[3].disponibilidade = true
+sacolas[4].disponibilidade = true
+
+if (sacolas[0].disponibilidade === false) {
+    sacolas[0].fruta = 0
+}
+if (sacolas[1].disponibilidade === false) {
+    sacolas[1].fruta = 0
+}
+if (sacolas[2].disponibilidade === false) {
+    sacolas[2].fruta = 0
+}
+if (sacolas[3].disponibilidade === false) {
+    sacolas[3].fruta = 0
+}
+if (sacolas[4].disponibilidade === false) {
+    sacolas[4].fruta = 0
 }
 
-function lista2 (){
-    let array = []
+function porNoCarrinho (){
 
-    let tarefa = prompt("Uma terefa") 
-    let tarefa2 = prompt("Uma terefa")
-    let tarefa3 = prompt("Uma terefa")
-    let tarefa4 = prompt("Uma terefa")
+function paraEscolher (){
+    let praPergunta = []
 
-
-    array.push(tarefa, tarefa2, tarefa3, tarefa4)
-
- console.log(`Suas tarefas: ${array}`)
-
-    let completas = prompt("Quantas completas de 1 a 4")
-
-    completas = Number(completas)
-
-    array.splice(0, completas)
-
-    console.log(`Suas tarefas: ${array}`)
-}
-/*
-
-let array1 = []
-
-let guardarNu = prompt("Numero")
-
-guardarNu = Number(guardarNu)
-
-let array2 = [1,2,3,4,5]
-
-let numero1 = prompt("um numero")
-numero1 = Number(numero1)
-let numero2 = prompt("um numero")
-numero2 = Number(numero2)
-
-array2.splice(0, guardarNu)
-array2.unshift(numero1, numero2)
-
-let mudar = prompt("Outro Numero")
-mudar = Number(mudar)
-
-let mudar2 = prompt("Outro Numero")
-mudar2 = Number(mudar2)
-
-
-array1.push(array2[mudar], array2[mudar2])
-console.log(array1, array2)
-*/
-/*
-let frase = "Eu sou Ederson, tenho 16 anos e sou um estudante"
-console.log(frase+ "\n")
-let nome = prompt("Seu nome")
-let idade = prompt("Sua idade")
-
-let estudante = prompt("Esta estudando [S/N]")
-if (estudante.toUpperCase() == "SIM"){
-    estudante = "sou um estudante"
-} else {
-    estudante = "não sou um estudante"
+    if (sacolas[0].disponibilidade === true){
+        praPergunta.push(" maça")
+    }
+    if (sacolas[1].disponibilidade === true){
+        praPergunta.push(" uva")
+    }
+    if (sacolas[2].disponibilidade === true){
+        praPergunta.push(" laranja")
+    }
+    if (sacolas[3].disponibilidade === true){
+        praPergunta.push(" pera")
+    }
+    if (sacolas[4].disponibilidade === true){
+        praPergunta.push(" limão")
+    }
+    return praPergunta
 }
 
-frase = frase.replaceAll("sou um estudante", estudante)
-frase = frase.replaceAll("Ederson", nome)
-frase = frase.replaceAll("16", idade)
+    let escolha = prompt(`Diga quais as frutas que você quer: ${paraEscolher()}`)
 
-console.log(frase)
+    let n1
+    let n2
+    let n3
+    let n4
+    let n5
 
+    if (escolha.includes(sacolas[0].fruta)){
+        n1 = sacolas[0].preco
+    } else {
+        n1 = 0
+    }
+    if (escolha.includes(sacolas[1].fruta)){
+        n2 = sacolas[1].preco
+    } else {
+        n2 = 0
+    }
+    if (escolha.includes(sacolas[2].fruta)){
+        n3 = sacolas[2].preco
+    } else {
+        n3 = 0
+    } 
+    if (escolha.includes(sacolas[3].fruta)){
+        n4 = sacolas[3].preco
+    } else {
+        n4 = 0
+    }
+    if (escolha.includes(sacolas[4].fruta)){
+        n5 = sacolas[4].preco
+    } else {
+        n5 = 0
+    }
+    
+    let praSacola = []
 
-let numero1 = Number(prompt("um numero"))
-let numero2 = Number(prompt("um numero"))
+    function proCarrinho (){
 
-let mult = numero1 * numero2
+        if (escolha.includes(sacolas[0].fruta)){
+            praSacola.push(sacolas[0].fruta)
+        } 
+        if (escolha.includes(sacolas[1].fruta)){
+            praSacola.push(sacolas[1].fruta)
+        }
+        if (escolha.includes(sacolas[2].fruta)){
+            praSacola.push(sacolas[2].fruta)
+        } 
+        if (escolha.includes(sacolas[3].fruta)){
+            praSacola.push(sacolas[3].fruta)
+        }
+        if (escolha.includes(sacolas[4].fruta)){
+            praSacola.push(sacolas[4].fruta)
+        }
+        return praSacola
+    }
 
-console.log(`${numero1} X ${numero2} = ${mult}`)
+    function calculoDoDinheiro (){
+        let pagamento
 
-let numero3 = Number(prompt("um numero"))
-let numero4 = Number(prompt("um numero"))
+        if (resultadoDoDinheiro === 0){
+            pagamento = `pagamento feito com sucesso`
+        } else if (resultadoDoDinheiro > 0){
+            pagamento = `pagamento feito com sucesso \nSeu troco é de ${resultadoDoDinheiro}R$`
+        } else {
+            pagamento = `faltam ${-(resultadoDoDinheiro)}R$ a serem pagos`
+        }
+        return pagamento
+    }
 
-let mult2 = numero3 * numero4
+    let calculoFrutas = n1+n2+n3+n4+n5
 
-console.log(`${numero3} X ${numero4} = ${mult2}`)
+    let resultadoDoDinheiro = carteira.dinhero - calculoFrutas
 
-
-if (mult < mult2){
-    console.log(`O primeiro Resultado é menor que o segundo: ${mult} < ${mult2}`)
-} else if (mult = mult2){
-    console.log(`O primeiro resultado é igual ao segundo: ${mult} = ${mult2}`)
-} else {
-    console.log(`O primeiro resultado é maior que o segundo: ${mult} > ${mult2}`)
+    console.log(`Itens: ${proCarrinho()}\n 
+Valor: ${calculoFrutas}R$\n
+${calculoDoDinheiro()}`)
 }
-*/
-/*
-function algo (algo){ 
-    let array2 = []
-    array2.push(algo[0 + numero])
-    array2.push(algo[algo.length - numero2])
-    return array2
-}
-let numero = Number(prompt("Um numero"))
-let numero2 = Number(prompt("Um numero"))
-let array1 = [1,2,3,4,5,6,7,8,9,]
-let novo = algo(array1)
-console.log(novo)
-*/
-
-
-function listas (listas){
-    let listaEscolida = []
-    listaEscolida.push(listas[0 + numeroLista])-1
-    return listaEscolida
-}
-
-alert(`Listas: cores[0], comidas[1], frutas[2], jogos[3]`)
-
-let numeroLista = Number(prompt("Qual lista?\n"))
-
-let cores = ["azul", "vermelho", "verde", "rosa", "preto"]
-let comidas = ["lazanha", "macarrão", "pizza", "xis"]
-let frutas = ["pera", "limão", "laranja", "uva", "morango"]
-let jogos = ["Stardew Valley", "umineko", "doom", "spore"]
-
-let listas1 = [cores, comidas, frutas, jogos]
-let paraLista = listas(listas1)
-
-let listagem
-
-if (numeroLista == 0) {
-    listagem = "Lista Cores"
-} else if (numeroLista == 1) {
-    listagem = "Lista Comidas"
-} else if (numeroLista == 2) {
-    listagem = "Lista Frutas"
-} else if (numeroLista == 3) {
-    listagem = "Lista Jogos"
-}
-
-console.log(`${listagem}: ${paraLista}`)
-
+porNoCarrinho()
