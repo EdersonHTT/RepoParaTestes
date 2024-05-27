@@ -1,20 +1,42 @@
+let y = 1
+let gardarDinheiro
+let nome 
+let idade
+let etinia
+let comprarMais
 
+
+for (let x = 1; x <= y; x++){
 function consoleCarteira (){
-
-    console.log(`Carteira: \nDinheiro: ${carteira.dinhero}
-    \nIdentidade: \nNome: ${carteira.identidade.nome} \nIdade: ${carteira.identidade.idade} \nEtnia: ${carteira.identidade.itinia}`)
-
+if(y === 1){
+    console.log(`Carteira: ${carteira.dinhero}
+    \nIdentidade: \nNome: ${carteira.identidade.nome} \nIdade: ${carteira.identidade.idade} \nEtnia: ${carteira.identidade.etinia}`)
+}else{
+    console.log(`Carteira: ${carteira.dinhero}`)
+}
 }
 
 let carteira = {
     identidade: {
-        nome: prompt("Seu nome completo:"),
-        idade: Number(prompt("Sua Idade?")),
-        itinia: nacionalidade(prompt("De onde você é"))
     },
-
-    dinhero: Number(prompt("Quanto você tem na carteira?")),
 }
+
+if ( y === 1){
+    carteira.identidade.nome = prompt("Seu nome completo:"),
+    carteira.identidade.idade = Number(prompt("Sua Idade?")),
+    carteira.identidade.etinia = nacionalidade(prompt("De onde você é").toUpperCase())
+    carteira.dinhero = Number(prompt("Quanto você tem?"))
+} else {
+    carteira.dinhero = gardarDinheiro
+    carteira.identidade.nome = nome
+    carteira.identidade.idade = idade
+    carteira.identidade.etinia = etinia
+}
+
+nome = carteira.identidade.nome
+idade = carteira.identidade.idade
+etinia = carteira.identidade.etinia
+
 consoleCarteira()
 
 function nacionalidade (nacional){
@@ -24,33 +46,34 @@ function nacionalidade (nacional){
 
     switch (qualNacional){
         
-        case "Brasil":
+        case "BRASIL":
         nacionalSera = "Brasileiro"
         break
 
-        case "EUA":
+        case "EUA", 'ESTADOS UNIDOS':
         nacionalSera = "Norte Americano"
         break
 
-        case "Italia":
+        case "ITALIA":
         nacionalSera = "Italiano"
         break
 
-        case "Russia":
+        case "RUSSIA":
         nacionalSera = "Russo"
         break
 
-        case "Japão":
+        case "JAPÃO":
         nacionalSera = "Japones"
         break
 
-        case "Mexico":
+        case "MEXICO":
         nacionalSera = "Mexicano"
 
     }
     return nacionalSera
 }
 nacionalidade(carteira.identidade.itinia)
+
 
 function mercadoDeFrutas (){
       
@@ -112,107 +135,132 @@ if (sacolas[4].disponibilidade === false) {
     sacolas[4].fruta = 0
 }
 
-function porNoCarrinho (){
 
-    function proCarrinho (){
 
-        if (escolha.includes(sacolas[0].fruta)){
-            praSacola.push(sacolas[0].fruta)
-        } 
-        if (escolha.includes(sacolas[1].fruta)){
-            praSacola.push(sacolas[1].fruta)
-        }
-        if (escolha.includes(sacolas[2].fruta)){
-            praSacola.push(sacolas[2].fruta)
-        } 
-        if (escolha.includes(sacolas[3].fruta)){
-            praSacola.push(sacolas[3].fruta)
-        }
-        if (escolha.includes(sacolas[4].fruta)){
-            praSacola.push(sacolas[4].fruta)
-        }
-        return praSacola
+function proCarrinho (){
+
+    if (escolha.includes(sacolas[0].fruta)){
+        praSacola.push(` [${quantidades.macas}]`+sacolas[0].fruta)
+    } 
+    if (escolha.includes(sacolas[1].fruta)){
+        praSacola.push(` [${quantidades.uvas}]`+sacolas[1].fruta)
     }
+    if (escolha.includes(sacolas[2].fruta)){
+        praSacola.push(` [${quantidades.laranjas}]`+sacolas[2].fruta)
+    } 
+    if (escolha.includes(sacolas[3].fruta)){
+        praSacola.push(` [${quantidades.peras}]`+sacolas[3].fruta)
+    }
+    if (escolha.includes(sacolas[4].fruta)){
+        praSacola.push(` [${quantidades.limoes}]`+sacolas[4].fruta)
+    }
+    return praSacola
+}
     let praSacola = []
 
     function paraEscolher (){
     let praPergunta = []
 
-    if (sacolas[0].disponibilidade === true){
-        praPergunta.push(`\n maça ${sacolas[0].preco}R$`)
-    }
-    if (sacolas[1].disponibilidade === true){
-        praPergunta.push(`\n uva ${sacolas[1].preco}R$`)
-    }
-    if (sacolas[2].disponibilidade === true){
-        praPergunta.push(`\n laranja ${sacolas[2].preco}R$`)
-    }
-    if (sacolas[3].disponibilidade === true){
-        praPergunta.push(`\n pera ${sacolas[3].preco}R$`)
-    }
-    if (sacolas[4].disponibilidade === true){
-        praPergunta.push(`\n limão ${sacolas[4].preco}R$`)
-    }
-    return praPergunta
+if (sacolas[0].disponibilidade === true){
+    praPergunta.push(`\n maça ${sacolas[0].preco}R$`)
+}
+if (sacolas[1].disponibilidade === true){
+    praPergunta.push(`\n uva ${sacolas[1].preco}R$`)
+}
+if (sacolas[2].disponibilidade === true){
+    praPergunta.push(`\n laranja ${sacolas[2].preco}R$`)
+}
+if (sacolas[3].disponibilidade === true){
+    praPergunta.push(`\n pera ${sacolas[3].preco}R$`)
+}
+if (sacolas[4].disponibilidade === true){
+    praPergunta.push(`\n limão ${sacolas[4].preco}R$`)
+}
+ return praPergunta
+
 }
 
 let escolha = prompt(`Diga quais as frutas que você quer: ${paraEscolher()}`)
 
-    let n1
-    let n2
-    let n3
-    let n4
-    let n5
+let quantidades = {}
 
-    function numerosDinheiro (){
-        if (escolha.includes(sacolas[0].fruta)){
-            n1 = sacolas[0].preco
-        } else {
-            n1 = 0
-        }
-        if (escolha.includes(sacolas[1].fruta)){
-        n2 = sacolas[1].preco
-        } else {
-            n2 = 0
-        }
-        if (escolha.includes(sacolas[2].fruta)){
-            n3 = sacolas[2].preco
-        } else {
-            n3 = 0
-        } 
-        if (escolha.includes(sacolas[3].fruta)){
-            n4 = sacolas[3].preco
-        } else {
-            n4 = 0
-        }
-        if (escolha.includes(sacolas[4].fruta)){
-            n5 = sacolas[4].preco
-        } else {
-            n5 = 0
-        }
+if (escolha.includes(sacolas[0].fruta)){
+    quantidades.macas = (Number(prompt("Quantas maças?"))) 
+} 
+if (escolha.includes(sacolas[1].fruta)){
+    quantidades.uvas = (Number(prompt("Quantas uvas?")))
+}
+if (escolha.includes(sacolas[2].fruta)){
+    quantidades.laranjas = (Number(prompt("Quantas laranjas?")))
+} 
+if (escolha.includes(sacolas[3].fruta)){
+    quantidades.peras = (Number(prompt("Quantas peras?")))
+}
+if (escolha.includes(sacolas[4].fruta)){
+    quantidades.limoes = (Number(prompt("Quantos limões?")))
+}
 
-        let calculoFrutas = n1+n2+n3+n4+n5
-        return calculoFrutas
+function numerosDinheiro (){
+
+    let precos = []
+
+    if (escolha.includes(sacolas[0].fruta)){
+        precos.push(quantidades.macas * sacolas[0].preco)
+    } else {
+        precos.push(0)
+    }
+    if (escolha.includes(sacolas[1].fruta)){
+        precos.push(quantidades.uvas * sacolas[1].preco)
+    } else {
+        precos.push(0)
+    }
+    if (escolha.includes(sacolas[2].fruta)){
+        precos.push(quantidades.laranjas * sacolas[2].preco)
+    } else {
+        precos.push(0)
+    } 
+    if (escolha.includes(sacolas[3].fruta)){
+        precos.push(quantidades.peras * sacolas[3].preco)
+    } else {
+        precos.push(0)
+    }
+    if (escolha.includes(sacolas[4].fruta)){
+        precos.push(quantidades.limoes * sacolas[4].preco)
+    } else {
+        precos.push(0)
     }
 
-    function calculoDoDinheiro (){
-        let pagamento
+    let calculoFrutas = precos[0]+precos[1]+precos[2]+precos[3]+precos[4]
+    return calculoFrutas
+}
+    
 
-        if (resultadoDoDinheiro === 0){
-            pagamento = `pagamento feito com sucesso`
-        } else if (resultadoDoDinheiro > 0){
-            pagamento = `pagamento feito com sucesso \nSeu troco é de ${resultadoDoDinheiro}R$`
-        } else {
-            pagamento = `faltam ${-(resultadoDoDinheiro)}R$ a serem pagos`
-        }
-        return pagamento
-    }
+
+function calculoDoDinheiro (){
+
     let resultadoDoDinheiro = carteira.dinhero - numerosDinheiro()
 
-    console.log(`Itens: ${proCarrinho()} 
-    \nValor: ${numerosDinheiro()}R$
-    \n${calculoDoDinheiro()}`)
+    let pagamento
 
+    if (resultadoDoDinheiro === 0){
+        pagamento = `pagamento feito com sucesso`
+    } else if (resultadoDoDinheiro > 0){
+        pagamento = `pagamento feito com sucesso \nSeu troco é de ${resultadoDoDinheiro}R$`
+    } else {
+        pagamento = `faltam ${-(resultadoDoDinheiro)}R$ a serem pagos`
+    }
+    return pagamento
+    }
+gardarDinheiro = carteira.dinhero - numerosDinheiro()
+
+
+console.log(`Itens: ${proCarrinho()} 
+\nValor: ${numerosDinheiro()}R$
+\n${calculoDoDinheiro()}`)
+
+comprarMais = prompt(`Fazer mais uma compra?`).toUpperCase()
+
+if (comprarMais.includes("S")){
+    y++
 }
-porNoCarrinho()
-
+}
