@@ -13,6 +13,7 @@ let quantidades = {
 }
 
 for (let x = 1; x <= y; x++){
+    
 function consoleCarteira (){
 if(y === 1){
     console.log(`Carteira: ${carteira.dinhero}
