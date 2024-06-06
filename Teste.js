@@ -13,78 +13,32 @@ let quantidades = {
 }
 
 for (let x = 1; x <= y; x++){
-    
-function consoleCarteira (){
-if(y === 1){
-    console.log(`Carteira: ${carteira.dinhero}
-    \nIdentidade: \nNome: ${carteira.identidade.nome} \nIdade: ${carteira.identidade.idade} \nEtnia: ${carteira.identidade.etinia}`)
-}else{
-    console.log(`Carteira: ${carteira.dinhero}`)
-}
-}
 
 let carteira = {
-    identidade: {
-    },
+    identidade: {},
 }
 
 if ( y === 1){
     carteira.identidade.nome = prompt("Seu nome completo:"),
     carteira.identidade.idade = Number(prompt("Sua Idade?")),
-    carteira.identidade.etinia = nacionalidade(prompt("De onde você é").toUpperCase())
     carteira.dinhero = Number(prompt("Quanto você tem?"))
 } else {
     carteira.dinhero = gardarDinheiro
     carteira.identidade.nome = nome
     carteira.identidade.idade = idade
-    carteira.identidade.etinia = etinia
 }
-
 nome = carteira.identidade.nome
 idade = carteira.identidade.idade
-etinia = carteira.identidade.etinia
 
-consoleCarteira()
-
-function nacionalidade (nacional){
-    let qualNacional = nacional
-
-    let nacionalSera 
-
-    switch (qualNacional){
-        
-        case "BRASIL":
-        nacionalSera = "Brasileiro"
-        break
-
-        case "EUA", 'ESTADOS UNIDOS':
-        nacionalSera = "Norte Americano"
-        break
-
-        case "ITALIA":
-        nacionalSera = "Italiano"
-        break
-
-        case "RUSSIA":
-        nacionalSera = "Russo"
-        break
-
-        case "JAPÃO":
-        nacionalSera = "Japones"
-        break
-
-        case "MEXICO":
-        nacionalSera = "Mexicano"
-
-    }
-    return nacionalSera
+if(y === 1){
+    console.log(`Identidade: \nNome: ${carteira.identidade.nome} \nIdade: ${carteira.identidade.idade} \nEtnia: ${carteira.identidade.etinia} \nCarteira: ${carteira.dinhero}`)
+    alert(`Identidade: \nNome: ${carteira.identidade.nome} \nIdade: ${carteira.identidade.idade} \nEtnia: ${carteira.identidade.etinia} \nCarteira: ${carteira.dinhero}`)
+}else{
+    console.log(`Carteira: ${carteira.dinhero}`)
+    alert(`Carteira: ${carteira.dinhero}`)
 }
-nacionalidade(carteira.identidade.itinia)
 
-
-
-function mercadoDeFrutas (){
-      
+function mercadoDeFrutas (){ 
    let sacola1 = {
     fruta: "maça",
     disponibilidade: 21,
@@ -93,7 +47,6 @@ function mercadoDeFrutas (){
     if (y > 1){
         sacola1.disponibilidade = sacola1.disponibilidade - quantidades.macas
     }
-
     let sacola2 = {
     fruta: "uva",
     disponibilidade: 23,
@@ -102,7 +55,6 @@ function mercadoDeFrutas (){
     if (y > 1){
         sacola2.disponibilidade = sacola2.disponibilidade - quantidades.uvas
     }
-
     let sacola3 = {
     fruta: "laranja",
     disponibilidade: 13,
@@ -111,7 +63,6 @@ function mercadoDeFrutas (){
     if (y > 1){
         sacola3.disponibilidade = sacola3.disponibilidade - quantidades.laranjas
     }
-
     let sacola4 = {
     fruta: "pera",
     disponibilidade: 24,
@@ -120,7 +71,6 @@ function mercadoDeFrutas (){
     if (y > 1){
         sacola4.disponibilidade = sacola4.disponibilidade - quantidades.peras
     }
-
     let sacola5 = {
     fruta: "limão",
     disponibilidade: 12,
@@ -129,7 +79,6 @@ function mercadoDeFrutas (){
     if (y > 1){
         sacola5.disponibilidade = sacola5.disponibilidade - quantidades.limoes
     }
-
     let paraSacolas = [sacola1, sacola2, sacola3, sacola4, sacola5]
     return paraSacolas
 }
@@ -176,24 +125,22 @@ function paraEscolher (){
     let praPergunta = []
 
     if (sacolas[0].disponibilidade > 0){
-        praPergunta.push(`\n [${sacolas[0].disponibilidade}] maça ${sacolas[0].preco}R$`)
+        praPergunta.push(`\n maça ${sacolas[0].preco}R$ --- Estoque: [${sacolas[0].disponibilidade}]`)
     }
     if (sacolas[1].disponibilidade > 0){
-        praPergunta.push(`\n [${sacolas[1].disponibilidade}] uva ${sacolas[1].preco}R$`)
+        praPergunta.push(`\n uva ${sacolas[1].preco}R$ --- Estoque: [${sacolas[1].disponibilidade}]`)
     }
     if (sacolas[2].disponibilidade > 0){
-        praPergunta.push(`\n [${sacolas[2].disponibilidade}] laranja ${sacolas[2].preco}R$`)
+        praPergunta.push(`\n laranja ${sacolas[2].preco}R$ --- Estoque: [${sacolas[2].disponibilidade}]`)
     }
     if (sacolas[3].disponibilidade > 0){
-        praPergunta.push(`\n [${sacolas[3].disponibilidade}] pera ${sacolas[3].preco}R$`)
+        praPergunta.push(`\n pera ${sacolas[3].preco}R$ --- Estoque: [${sacolas[3].disponibilidade}]`)
     }
     if (sacolas[4].disponibilidade > 0){
-        praPergunta.push(`\n [${sacolas[4].disponibilidade}] limão ${sacolas[4].preco}R$`)
+        praPergunta.push(`\n limão ${sacolas[4].preco}R$ --- Estoque: [${sacolas[4].disponibilidade}]`)
     }
     return praPergunta
-
 }
-
 let escolha = prompt(`Diga quais as frutas que você quer: ${paraEscolher()}`)
 
 if (escolha.includes(sacolas[0].fruta)){
@@ -212,9 +159,7 @@ if (escolha.includes(sacolas[4].fruta)){
     quantidades.limoes = quantidades.limoes + Number(prompt("Quantos limões?"))
 }
 
-
 function numerosDinheiro (){
-
     let precos = []
 
     if (escolha.includes(sacolas[0].fruta)){
@@ -265,12 +210,11 @@ function calculoDoDinheiro (){
 
 gardarDinheiro = carteira.dinhero - numerosDinheiro()
 
-console.log(`Itens: ${proCarrinho()} 
+alert(`=====( Nota )=====\nItens: ${proCarrinho()} 
 \nValor: ${numerosDinheiro()}R$
-\n${calculoDoDinheiro()}`)
+\n${calculoDoDinheiro()}\n===============`)
 
 comprarMais = prompt(`Fazer mais uma compra?`).toUpperCase()
-
 if (comprarMais.includes("S")){
     y++
 }
